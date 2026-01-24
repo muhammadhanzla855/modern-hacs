@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Split Systems</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/header.css">
+</head>
+<body>
+  <div id="header"></div>
+  
+    <h1 class="about-us">We Focused on Comfort, Efficiency, & Reliability.</h1>
+
+  <!-- HERO SECTION -->
+  <section class="mini-split-hero">
+    <div class="mini-split-container">
+      
+      <!-- LEFT -->
+      <div class="mini-split-content">
+        <div class="content-inner">
+          <h1>Who We Are</h1>
+          <p>
+            Based in Los Angeles, Modern HVAC Services is a leading provider of residential and commercial heating and cooling solutions across California.Our team of highly trained HVAC professionals combines hands-on expertise with cutting-edge technology to design, install, and optimize systems that deliver lasting comfort, efficiency, and reliability.Every project we handle is executed with precision, safety, and a focus on exceeding client expectations.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="mini-split-image">
+        <img src="./assets/images/who-we-r.webp" alt="Mini Split Air Conditioner">
+      </div>
+    </div>
+  </section>
+
+<!-- Vision SECTION -->
+  <section class="subservice subservice--multi-zone">
+    <div class="subservice__container">
+      <!-- LEFT IMAGES -->
+      <div class="subservice__images">
+        <div class="subservice__image subservice__image--one">
+          <img src="./assets/images/our-mission.webp" alt="Multi-Zone Mini-Split System">
+        </div>
+        
+      </div>
+      
+      <!-- LEFT CONTENT -->
+      <div class="content">
+        <h2>Our Mission</h2>
+        <p>
+Our mission is to deliver dependable HVAC services that combine skilled workmanship, precise system design, and transparent communication. We take pride in going beyond technical excellence to ensure every client feels valued, informed, and confident in their comfort solutions. From the initial consultation to ongoing maintenance, we prioritize understanding each customer’s unique needs and delivering solutions that are not only efficient and code-compliant but also reliable and long-lasting. By fostering open communication, proactive service, and meticulous attention to detail, we strive to provide peace of mind and consistent, worry-free performance, demonstrating our unwavering commitment to the satisfaction and well-being of every client we serve.
+        </p>
+      </div>
+
+      
+    </div>
+  </section>
+  <!-- Comprehensive System Inspections SECTION -->
+  <section class="what-we-build">
+    <div class="container">
+      <!-- RIGHT CONTENT -->
+      <div class="subservice__content">
+        <h2 class="subservice__title">Our Vision</h2>
+        <p class="subservice__description">
+We strive to be the trusted HVAC partner for homeowners and businesses across California, delivering solutions that combine reliability, innovation, and long-term value. Our vision is to create healthier, more comfortable indoor environments, champion energy-efficient and sustainable practices, and set a benchmark for excellence in HVAC performance. By integrating advanced technology, responsible design, and expert craftsmanship, we are committed to helping our clients reduce energy consumption, enhance system longevity, and contribute to a more sustainable future—ensuring every space we serve reflects both comfort and conscientious engineering.</p>
+      </div>
+      <!-- RIGHT IMAGES -->
+      <div class="images">
+        <div class="image image-one">
+          <img src="./assets/images/our-vision.webp" alt="Multi-Zone Mini-Split System">
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Compressor Replacement & Repair SECTION -->
+  <section class="subservice subservice--multi-zone">
+    <div class="subservice__container">
+      <!-- LEFT IMAGES -->
+      <div class="subservice__images">
+        <div class="subservice__image subservice__image--one">
+          <img src="./assets/images/core-vales.webp" alt="Multi-Zone Mini-Split System">
+        </div>
+        
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="subservice__content">
+        <h2 class="subservice__title">Our Core Values</h2>
+<ul class="services-list" style="line-height: 2.5;">
+  <li><strong>Excellence:</strong> Delivering superior service and quality in every project</li>
+  <li><strong>Integrity:</strong> Maintaining transparency, honesty, and professionalism</li>
+  <li><strong>Innovation:</strong> Using the latest technology to optimize performance and efficiency</li>
+  <li><strong>Customer Focus:</strong> Prioritizing client satisfaction and long-term relationships</li>
+  <li><strong>Sustainability:</strong> Promoting energy-efficient solutions that protect our environment</li>
+</ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="footer"></div>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>
+<style>
+  /* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* ===== ROOT COLORS ===== */
+:root {
+  --blue: #0b3c7a;
+  --cyan: #0BB5EB;
+  --bullet-color: #FF3B00;
+}
+/* UNIFY HEADING AND PARAGRAPH FONTS ACROSS SECTIONS */
+.content h2,
+.content h3,
+.subservice__title,
+.subservice__subtitle {
+  font-family: JetBrains Mono, monospace;
+
+}
+.about-us {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0b3c7a;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+.content p,
+.subservice__description {
+  font-family: "Lay Grotesk - Trial", sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+
+/* ===== HERO SECTION ===== */
+.mini-split-hero {
+  padding: 50px 6%;
+}
+
+.mini-split-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: stretch;
+  gap: 70px;
+}
+
+.mini-split-content {
+  display: flex;
+  align-items: center;
+}
+
+.content-inner {
+  padding-right: 20px;
+}
+
+.mini-split-content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.mini-split-content h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: var(--blue);
+  font-family: JetBrains Mono, monospace;
+}
+
+.mini-split-content p,
+.mini-split-content ul li {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #444;
+  font-family: "Lay Grotesk - Trial", sans-serif;
+  margin-bottom: 18px;
+}
+
+/* ===== GLOBAL LIST STYLING (ALL UL) ===== */
+ul.services-list,
+ul.subservice__list,
+.content ul {
+  list-style: none;
+  padding-left: 30px;
+  margin-bottom: 18px;
+}
+
+ul.services-list li,
+ul.subservice__list li,
+.content ul li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+}
+
+ul.services-list li::before,
+ul.subservice__list li::before,
+.content ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--bullet-color);
+  font-size: 2em;
+  line-height: 1;
+}
+
+/* ===== HERO IMAGE ===== */
+.mini-split-image {
+  margin-top: 30px;
+  max-height: 350px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 70px rgba(8, 102, 177, 0.25),
+    0 0 0 1px rgba(8, 102, 177, 0.08);
+}
+
+.mini-split-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 650px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ===== SECTIONS ===== */
+.what-we-build,
+.subservice--multi-zone {
+  padding: 80px 6%;
+}
+
+.container,
+.subservice__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ===== LEFT CONTENT ===== */
+.content h2,
+.subservice__title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0b3c7a;
+  margin-bottom: 20px;
+}
+
+.content p,
+.subservice__description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.content h3,
+.subservice__subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--blue);
+}
+
+/* ===== RIGHT IMAGES ===== */
+.images,
+.subservice__images {
+  position: relative;
+  height: 520px;
+}
+
+.image,
+.subservice__image {
+  position: absolute;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  
+}
+
+.image img,
+.subservice__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* IMAGE POSITIONING */
+.image-one,
+.subservice__image--one {
+  width: 520px;
+  height: 520px;
+  top: 0;
+  left: 10%;
+}
+
+.image-two,
+.subservice__image--two {
+  width: 360px;
+  height: 260px;
+  bottom: 0;
+  right: 20px;
+}
+
+/* CONTENT WIDTH */
+.subservice__content {
+  max-width: 520px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .mini-split-container,
+  .container,
+  .subservice__container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .mini-split-content {
+    text-align: center;
+  }
+
+  .mini-split-content h1 {
+    font-size: 34px;
+  }
+
+  .mini-split-image,
+  .images,
+  .subservice__images {
+    height: 420px;
+    margin-top: 60px;
+    left: 0;
+  }
+
+  .image-one,
+  .subservice__image--one {
+    width: 260px;
+    height: 340px;
+    left: 30%;
+  }
+
+  .image-two,
+  .subservice__image--two {
+    width: 300px;
+    height: 380px;
+    right: 10px;
+  }
+
+  .subservice__content,
+  .content {
+    max-width: 100%;
+  }
+}
+h2,
+h3 {
+  color: #0b3c7a;
+}
+/* =========================
+   UNIFIED IMAGE HOVER EFFECT
+   Lift + Shadow (no zoom)
+========================= */
+
+/* Ensure all image containers are ready for hover */
+.mini-split-image,
+.images,
+.subservice__images,
+.image,
+.subservice__image {
+  position: relative;
+  overflow: visible;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+/* Hover effect: lift + shadow only */
+.mini-split-image:hover,
+.images:hover .image,
+.subservice__images:hover .subservice__image {
+  transform: translateY(-5px); /* subtle lift */
+  box-shadow: 0 10px 24px #0b3c7a; /* blue shadow like your cards */
+}
+
+/* =========================
+   MOBILE LAYOUT FIX
+   Image First → Content Second
+========================= */
+@media (max-width: 900px) {
+
+  /* HERO SECTION */
+  .mini-split-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mini-split-image {
+    order: 1;
+  }
+
+  .mini-split-content {
+    order: 2;
+  }
+
+  /* MISSION / CORE VALUES (subservice sections) */
+  .subservice__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subservice__images {
+    order: 1;
+  }
+
+  .subservice__content {
+    order: 2;
+    text-align: center;
+  }
+
+  /* VISION SECTION */
+  .what-we-build .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .what-we-build .images {
+    order: 1;
+  }
+
+  .what-we-build .subservice__content {
+    order: 2;
+    text-align: center;
+  }
+
+  /* Image centering & sizing */
+  .image-one,
+  .subservice__image--one {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    left: 0;
+  }
+
+  .image img,
+  .subservice__image img,
+  .mini-split-image img {
+    border-radius: 18px;
+  }
+
+  /* Text spacing */
+  .content,
+  .subservice__content {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 900px) {
+
+  /* FIX: Mission section content ordering */
+  .subservice__container .content {
+    order: 2;
+    text-align: center;
+  }
+
+  .subservice__container .subservice__images {
+    order: 1;
+  }
+}
+
+</style>
