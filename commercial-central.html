@@ -617,3 +617,26 @@ ul.subservice__list li::before,
 }
 
 </style>
+<script>
+fetch('/header.html')
+  .then(res => res.text())
+  .then(html => {
+    const header = document.getElementById('header');
+    header.innerHTML = html;
+
+    const mobileToggle = header.querySelector('#mobileToggle');
+    const mobileMenu = header.querySelector('#mobileMenu');
+
+    if (!mobileToggle || !mobileMenu) return;
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      mobileToggle.textContent =
+        mobileMenu.classList.contains('open') ? '✕' : '☰';
+    });
+  });
+
+fetch('/footer.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>

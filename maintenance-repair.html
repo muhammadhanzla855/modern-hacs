@@ -173,14 +173,29 @@ The compressor is the heart of your HVAC system. When compressor issues arise, w
   <div id="footer"></div>
 
   <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('header').innerHTML = data);
+fetch('/header.html')
+  .then(res => res.text())
+  .then(html => {
+    const header = document.getElementById('header');
+    header.innerHTML = html;
 
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('footer').innerHTML = data);
-  </script>
+    const mobileToggle = header.querySelector('#mobileToggle');
+    const mobileMenu = header.querySelector('#mobileMenu');
+
+    if (!mobileToggle || !mobileMenu) return;
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      mobileToggle.textContent =
+        mobileMenu.classList.contains('open') ? '✕' : '☰';
+    });
+  });
+
+fetch('/footer.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+
 </body>
 </html>
 <style>

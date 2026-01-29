@@ -440,13 +440,15 @@ h3 {
     display: flex;
     flex-direction: column;
   }
-
+.content-inner h1 {
+  order:1;
+}
   .subservice__images {
-    order: 1;
+    order: 2;
   }
 
   .subservice__content {
-    order: 2;
+    order: 3;
     text-align: center;
   }
 
@@ -500,3 +502,26 @@ h3 {
 }
 
 </style>
+<script>
+fetch('/header.html')
+  .then(res => res.text())
+  .then(html => {
+    const header = document.getElementById('header');
+    header.innerHTML = html;
+
+    const mobileToggle = header.querySelector('#mobileToggle');
+    const mobileMenu = header.querySelector('#mobileMenu');
+
+    if (!mobileToggle || !mobileMenu) return;
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      mobileToggle.textContent =
+        mobileMenu.classList.contains('open') ? '✕' : '☰';
+    });
+  });
+
+fetch('/footer.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>
