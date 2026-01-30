@@ -38,9 +38,12 @@
 
     <!-- Social Icons -->
     <div class="header__socials">
-      <a href="tel:+19092129545" class="header__social" aria-label="Call us">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <a href="#"
+     class="header__social whatsapp-btn"
+     aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
 
       <a href="https://www.instagram.com/modernheatingandcoolingsol/" class="header__social"><i class="fab fa-instagram"></i></a>
       <a href="#" class="header__social"><i class="fab fa-facebook-f"></i></a>
@@ -61,3 +64,28 @@
     <a href="./sales.html">Sales</a>
   </div>
 </header>
+<script>
+  document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const phone = "19092129545";
+      const message = "Hello, I need HVAC services";
+
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // MOBILE: open WhatsApp app (browser will ask permission — normal)
+        window.location.href =
+          `whatsapp://send?phone=${phone}&text=${encodeURIComponent(message)}`;
+      } else {
+        // DESKTOP: open WhatsApp Web (browser permission prompt — normal)
+        window.open(
+          `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`,
+          "_blank",
+          "noopener,noreferrer"
+        );
+      }
+    });
+  });
+</script>
