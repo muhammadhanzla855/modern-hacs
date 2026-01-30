@@ -653,3 +653,65 @@ fetch('/footer.html')
   .then(res => res.text())
   .then(html => document.getElementById('footer').innerHTML = html);
 </script>
+<script>
+function reorderSectionsMobile() {
+  // MOBILE BREAKPOINT
+  const isMobile = window.innerWidth <= 900;
+
+  // ===== HERO SECTION =====
+  const heroContainer = document.querySelector('.mini-split-hero .mini-split-container');
+  if (heroContainer) {
+    const image = heroContainer.querySelector('.mini-split-image');
+    const contentInner = heroContainer.querySelector('.content-inner');
+    const p = contentInner.querySelector('p');
+
+    if (isMobile && image && !image.classList.contains('moved')) {
+      // Move image after h1
+      p.before(image);
+      image.classList.add('moved');
+    } else if (!isMobile && image && image.classList.contains('moved')) {
+      // Restore desktop
+      heroContainer.appendChild(image);
+      image.classList.remove('moved');
+    }
+  }
+
+  // ===== MULTI-ZONE & CONSOLE (what-we-build) =====
+  document.querySelectorAll('.what-we-build .container').forEach(container => {
+    const images = container.querySelector('.images');
+    const content = container.querySelector('.content');
+    const p = content.querySelector('p');
+
+    if (isMobile && images && !images.classList.contains('moved')) {
+      // Move images after heading
+      p.before(images);
+      images.classList.add('moved');
+    } else if (!isMobile && images && images.classList.contains('moved')) {
+      // Restore desktop
+      container.appendChild(images);
+      images.classList.remove('moved');
+    }
+  });
+
+  // ===== CASSETTE & WALL-MOUNTED (subservice) =====
+  document.querySelectorAll('.subservice__container').forEach(container => {
+    const images = container.querySelector('.subservice__images');
+    const content = container.querySelector('.subservice__content');
+    const p = content.querySelector('p');
+
+    if (isMobile && images && !images.classList.contains('moved')) {
+      // Move images after heading
+      p.before(images);
+      images.classList.add('moved');
+    } else if (!isMobile && images && images.classList.contains('moved')) {
+      // Restore desktop
+      container.insertBefore(images, container.firstChild); // optional, keep left side
+      images.classList.remove('moved');
+    }
+  });
+}
+
+// Run on load and resize
+window.addEventListener('load', reorderSectionsMobile);
+window.addEventListener('resize', reorderSectionsMobile);
+</script>
